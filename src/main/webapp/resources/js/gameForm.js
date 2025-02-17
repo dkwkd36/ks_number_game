@@ -3,6 +3,11 @@ $(document).ready(function () {
         playGame();
     });
 	
+	$("#modal_button").click(function() {
+		$("#result_answer").focus();
+	});
+	
+	
 	$("#gameForm").on("keypress", function (event) {
 	    if (event.key === "Enter") {
 	        event.preventDefault();
