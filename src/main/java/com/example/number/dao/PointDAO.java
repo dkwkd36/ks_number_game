@@ -29,22 +29,30 @@ public class PointDAO {
 	
 	public PointDTO getPointByMemberId(String member_id) {
 		try (Connection connection = dataSource.getConnection()) {
+			
 	        if (connection == null || connection.isClosed()) {
 	            logger.error("DB接続時にエラーが発生しました。");
 	            return null;
 	        }
+	        
 	    } catch (Exception e) {
 	        logger.error("DB接続時にエラーが発生しました。", e);
 	        return null;
 	    }
-					
-		PointDTO pointInfo = sqlSessionTemplate.selectOne(NAMESPACE + ".getPointByMemberId", member_id);
 		
-		if (pointInfo == null) {
-			logger.warn("ポイント情報テーブルに会員IDが登録されていません。");
+		try {
+			PointDTO pointInfo = sqlSessionTemplate.selectOne(NAMESPACE + ".getPointByMemberId", member_id);
+			
+			if (pointInfo == null) {
+				logger.warn("ポイント情報テーブルに会員IDが登録されていません。");
+			}
+			
+			return pointInfo;
+		} catch (Exception e) {
+			logger.error("システムエラーが発生しました。", e);
+			return null;
 		}
 		
-		return pointInfo;
     }
 	
 	public void setHiddenNumberByMemberId(String member_id, String hidden_number, int game_count, int game_act_fig) {
@@ -53,7 +61,11 @@ public class PointDAO {
 		params.put("hidden_number", hidden_number);
 		params.put("game_count", game_count);
 		params.put("game_act_fig", game_act_fig);
-        sqlSessionTemplate.update(NAMESPACE + ".setHiddenNumberByMemberId", params);        	
+		try {
+			sqlSessionTemplate.update(NAMESPACE + ".setHiddenNumberByMemberId", params);        				
+		} catch (Exception e) {
+			logger.error("システムエラーが発生しました。", e);
+		}
     }
 	
 	
@@ -63,7 +75,11 @@ public class PointDAO {
 		params.put("game_count", game_count);
 		params.put("point", point);
 		params.put("game_act_fig", game_act_fig);
-		sqlSessionTemplate.update(NAMESPACE + ".setPointInfo", params);
+		try {
+			sqlSessionTemplate.update(NAMESPACE + ".setPointInfo", params);			
+		} catch (Exception e) {
+			logger.error("システムエラーが発生しました。", e);
+		}
 		
 	}
 	

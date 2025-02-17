@@ -29,14 +29,21 @@ public class ResultDAO {
 	
 	
 	public List<GameResultDTO> getResultAllByMemberId(String member_id) {
-		return sqlSessionTemplate.selectList(NAMESPACE + ".getResultAllByMemberId", member_id);			
+		try {
+			return sqlSessionTemplate.selectList(NAMESPACE + ".getResultAllByMemberId", member_id);						
+		} catch (Exception e) {
+			logger.error("システムエラーが発生しました。", e);
+			return null;
+		}
     }
 	
 	public void saveResult(String member_id, int game_count, String result_answer, String result_content) {
 		try (Connection connection = dataSource.getConnection()) {
+			
 	        if (connection == null || connection.isClosed()) {
 	            logger.error("DB接続時にエラーが発生しました。");
 	        }
+	        
 	    } catch (Exception e) {
 	        logger.error("DB接続時にエラーが発生しました。", e);
 	    }
@@ -46,7 +53,12 @@ public class ResultDAO {
 		params.put("game_count", game_count);
 		params.put("result_answer", result_answer);
 		params.put("result_content", result_content);
-		sqlSessionTemplate.insert(NAMESPACE + ".saveResult", params);			
+		
+		try {
+			sqlSessionTemplate.insert(NAMESPACE + ".saveResult", params);						
+		} catch (Exception e) {
+			logger.error("システムエラーが発生しました。", e);
+		}
 		
 	}
 }
