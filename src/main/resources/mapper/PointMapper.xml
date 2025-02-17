@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.number.mapper.PointMapper">
+    <select id="getPointByMemberId" parameterType="string" resultType="com.example.number.dto.PointDTO">
+        SELECT point, game_count, game_act_fig, hidden_number, rec_create_date, rec_update_date
+        FROM POINTINFO
+        WHERE member_id = #{member_id}
+    </select>
+    
+    <update id="setHiddenNumberByMemberId" parameterType="map">
+        UPDATE POINTINFO
+        SET hidden_number = #{hidden_number}, game_count = #{game_count}, game_act_fig = #{game_act_fig},rec_update_date = CURRENT_TIMESTAMP
+        WHERE member_id = #{member_id}
+    </update>
+    
+    <update id="setPointInfo" parameterType="map">
+    	UPDATE POINTINFO
+    	SET point = #{point}, game_count=#{game_count}, game_act_fig = #{game_act_fig}
+    	WHERE member_id = #{member_id}
+    </update>
+</mapper>
