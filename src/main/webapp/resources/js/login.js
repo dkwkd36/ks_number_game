@@ -26,7 +26,7 @@ function validateLogin(event) {
 
     let memberIdRegex = /^[0-9]+$/;
     if (!memberIdRegex.test(member_id)) {
-        error_message.text("会員IDは半角数字以外は入力できません");
+        error_message.text("会員IDは半角数字以外は入力できません。");
 		$("#member_id").focus();
         return;
     }

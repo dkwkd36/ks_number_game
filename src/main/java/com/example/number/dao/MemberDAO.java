@@ -35,16 +35,21 @@ public class MemberDAO {
 	        return -1;
 	    }
 		
-		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("member_id", member_id);
-		params.put("member_password", member_password);
-		
-		int loginResult = sqlSessionTemplate.selectOne(NAMESPACE + ".findMemberByIdAndPassword", params);
-		
-		if (loginResult == 0) {
-			logger.warn("会員IDが登録されていません。");
+		try {
+			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("member_id", member_id);
+			params.put("member_password", member_password);
+			
+			int loginResult = sqlSessionTemplate.selectOne(NAMESPACE + ".findMemberByIdAndPassword", params);
+			
+			if (loginResult == 0) {
+				logger.warn("会員IDが登録されていません。");
+			}
+			
+			return loginResult;			
+		} catch (Exception e) {
+			logger.error("システムエラーが発生しました。", e);
+			return -1;
 		}
-		
-		return loginResult;
     }
 }

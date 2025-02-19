@@ -18,3 +18,9 @@
 2025-02-18T00:05:08.028+09:00  INFO 17580 --- [number] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2025-02-18T00:05:08.276+09:00  INFO 17580 --- [number] [http-nio-8080-exec-5] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@344b9602
 2025-02-18T00:05:08.277+09:00  INFO 17580 --- [number] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-18T13:19:50.986+09:00  WARN 17580 --- [number] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12h7m11s499ms885µs900ns).
+2025-02-18T15:18:48.271+09:00  INFO 17580 --- [number] [RMI TCP Connection(197)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-18T15:18:48.291+09:00  INFO 17580 --- [number] [RMI TCP Connection(197)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T15:18:48.301+09:00  INFO 17580 --- [number] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T15:18:48.318+09:00  INFO 17580 --- [number] [RMI TCP Connection(197)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-18T15:18:48.322+09:00  INFO 17580 --- [number] [RMI TCP Connection(197)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
