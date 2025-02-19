@@ -45,6 +45,7 @@ public class PointDAO {
 			
 			if (pointInfo == null) {
 				logger.warn("ポイント情報テーブルに会員IDが登録されていません。");
+				return null;
 			}
 			
 			return pointInfo;

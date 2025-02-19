@@ -28,8 +28,13 @@ public class GameService {
 		Map<String, Object> gameData = new HashMap<>();
 		List<GameResultDTO> resultList = new ArrayList<>();
 		PointDTO pointInfo = pointDAO.getPointByMemberId(member_id);
+		
+		if(pointInfo == null) {
+	    	return null;
+	    }
+		
 	    String today = LocalDate.now().toString();
-	    String recUpdateDate = pointInfo.getRec_update_date().toLocalDate().toString();
+	    String recUpdateDate = pointInfo.getRec_update_date().toLocalDate().toString(); 
 	    
 	    if(pointInfo.getRec_create_date().equals(pointInfo.getRec_update_date()) || !today.equals(recUpdateDate)) {
 	    	Random rand = new Random();
@@ -53,6 +58,10 @@ public class GameService {
             pointDAO.setHiddenNumberByMemberId(member_id, hidden_number, 0, 0);
 	    } else {
 	    	resultList = resultDAO.getResultAllByMemberId(member_id);
+	    	
+	    	if (resultList == null) {
+	    		return null;
+	    	}
 	    }
             
         gameData.put("pointInfo", pointInfo);

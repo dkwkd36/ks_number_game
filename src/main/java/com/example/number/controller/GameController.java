@@ -27,10 +27,16 @@ public class GameController {
 	public String gameForm(HttpSession session, Model model) {
 		String member_id = (String) session.getAttribute("member_id");
 		Map<String, Object> gameData = gameService.gameInit(member_id);
+		
+		if(gameData == null) {
+			model.addAttribute("message", "システムエラーが発生しました。");
+		}
+		
 		PointDTO pointInfo = (PointDTO) gameData.get("pointInfo");
 		
 		model.addAttribute("pointInfo", pointInfo);
         model.addAttribute("resultList", gameData.get("resultList"));
+        
         
         if (pointInfo.getGame_act_fig() == 1) {
             model.addAttribute("message", "本日のゲームは実施ずみです。ゲームは１日１回のみです。");
