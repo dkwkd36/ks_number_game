@@ -10,7 +10,7 @@
 	<script src="<c:url value='/resources/js/login.js'/>"></script>
 	<style>
         body {
-            font-family: "Noto Sans JP", "Meiryo", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+            font-family: "Noto Sans JP", "Meiryo", "Yu Gothic", sans-serif;
         }
     </style>
 </head>
