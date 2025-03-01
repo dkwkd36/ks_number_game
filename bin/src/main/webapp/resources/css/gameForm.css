@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body {       
+	font-family: "Noto Sans JP", "Meiryo", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+table {
+	border-collapse: collapse;       
+	text-align: center;
+}
+        
+th, td {     
+	border: 1px solid black;    
+	padding: 8px;
+}
+        
+th {
+	background-color: #f2f2f2;    
+}
+        

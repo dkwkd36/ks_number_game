@@ -1,0 +1,26 @@
+2025-02-18T00:04:53.487+09:00  INFO 17580 --- [number] [restartedMain] com.example.number.NumberApplication     : Starting NumberApplication using Java 21.0.5 with PID 17580 (C:\pleiades\2024-12\numberGame\number\target\classes started by dkwkd in C:\pleiades\2024-12\numberGame\number)
+2025-02-18T00:04:53.499+09:00  INFO 17580 --- [number] [restartedMain] com.example.number.NumberApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-02-18T00:04:53.584+09:00  INFO 17580 --- [number] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-18T00:04:53.585+09:00  INFO 17580 --- [number] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-18T00:04:55.254+09:00  WARN 17580 --- [number] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.number]' package. Please check your configuration.
+2025-02-18T00:04:55.924+09:00  INFO 17580 --- [number] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-18T00:04:55.954+09:00  INFO 17580 --- [number] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-18T00:04:55.955+09:00  INFO 17580 --- [number] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-18T00:04:56.404+09:00  INFO 17580 --- [number] [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-02-18T00:04:56.421+09:00  INFO 17580 --- [number] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-18T00:04:56.422+09:00  INFO 17580 --- [number] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2836 ms
+2025-02-18T00:04:57.257+09:00  INFO 17580 --- [number] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-18T00:04:57.313+09:00  INFO 17580 --- [number] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-18T00:04:57.327+09:00  INFO 17580 --- [number] [restartedMain] com.example.number.NumberApplication     : Started NumberApplication in 4.383 seconds (process running for 5.325)
+2025-02-18T00:05:00.577+09:00  INFO 17580 --- [number] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18T00:05:00.578+09:00  INFO 17580 --- [number] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-18T00:05:00.579+09:00  INFO 17580 --- [number] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-18T00:05:08.028+09:00  INFO 17580 --- [number] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-18T00:05:08.276+09:00  INFO 17580 --- [number] [http-nio-8080-exec-5] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@344b9602
+2025-02-18T00:05:08.277+09:00  INFO 17580 --- [number] [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-18T13:19:50.986+09:00  WARN 17580 --- [number] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12h7m11s499ms885µs900ns).
+2025-02-18T15:18:48.271+09:00  INFO 17580 --- [number] [RMI TCP Connection(197)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-02-18T15:18:48.291+09:00  INFO 17580 --- [number] [RMI TCP Connection(197)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-18T15:18:48.301+09:00  INFO 17580 --- [number] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-18T15:18:48.318+09:00  INFO 17580 --- [number] [RMI TCP Connection(197)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-18T15:18:48.322+09:00  INFO 17580 --- [number] [RMI TCP Connection(197)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

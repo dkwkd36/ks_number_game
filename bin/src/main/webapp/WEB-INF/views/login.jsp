@@ -21,7 +21,7 @@
     			<span class="navbar-brand mb-0 h1 text-center">会員認証</span>
   			</div>
 		</nav>
-    	<form class="w-75" id="loginForm" action="/login" method="post">
+    	<form id="loginForm" action="/login" method="post">
         	<label class="d-inline-block w-25" for="member_id">会員ID　</label>
         	<input class="mt-4" type="text" id="member_id" name="member_id">
         	<br>

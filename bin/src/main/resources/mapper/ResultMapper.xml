@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.number.mapper.ResultMapper">
+     <select id="getResultAllByMemberId" parameterType="string" resultType="com.example.number.dto.GameResultDTO">
+        SELECT result_answer, result_content
+        FROM RESULTINFO
+        WHERE member_id = #{member_id} AND game_date = CURRENT_DATE
+        ORDER BY game_count ASC
+    </select>
+    <insert id="saveResult" parameterType="map">
+    	INSERT INTO RESULTINFO (member_id, game_date, game_count, result_answer, result_content)
+        VALUES (#{member_id}, CURRENT_DATE, #{game_count}, #{result_answer}, #{result_content})
+    </insert>
+</mapper>
